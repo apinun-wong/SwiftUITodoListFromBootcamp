@@ -25,7 +25,9 @@ struct MVVMToDoListByBootcampApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ListView()
+            }
         }
         .modelContainer(sharedModelContainer)
     }
