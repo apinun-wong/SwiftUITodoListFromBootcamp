@@ -22,12 +22,15 @@ struct MVVMToDoListByBootcampApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    @StateObject var listViewModel: ListViewModel = .init()
 
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 ListView()
             }
+            .environmentObject(listViewModel)
         }
         .modelContainer(sharedModelContainer)
     }
