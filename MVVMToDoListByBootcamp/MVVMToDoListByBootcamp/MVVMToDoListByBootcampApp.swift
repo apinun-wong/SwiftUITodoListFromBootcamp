@@ -30,6 +30,7 @@ struct MVVMToDoListByBootcampApp: App {
             NavigationView {
                 ListView()
             }
+            .navigationViewStyle(.stack)
             .environmentObject(listViewModel)
         }
         .modelContainer(sharedModelContainer)

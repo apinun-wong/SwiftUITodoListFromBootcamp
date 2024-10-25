@@ -24,7 +24,7 @@ struct AddView: View {
                     TextField("Type something here...", text: $textFieldText)
                         .padding(.horizontal)
                         .frame(height: 55)
-                        .background(.gray.opacity(0.2))
+                        .background(Color(.secondarySystemBackground))
                         .cornerRadius(12)
                     Spacer()
                         .frame(width: 24)
@@ -38,7 +38,7 @@ struct AddView: View {
                         .foregroundColor(.white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
-                        .background(.blue)
+                        .background(.accent)
                         .cornerRadius(12)
                     Spacer()
                         .frame(width: 24)
@@ -78,8 +78,11 @@ struct AddView: View {
 }
 
 #Preview {
-    NavigationView {
-        AddView()
+    Group {
+        NavigationView {
+            AddView()
+        }
+        .preferredColorScheme(.dark)
+        .environmentObject(ListViewModel())
     }
-    .environmentObject(ListViewModel())
 }
